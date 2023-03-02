@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@7.15.0"
+}
