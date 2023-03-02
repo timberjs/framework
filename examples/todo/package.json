@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@timberjs/timber": "workspace:*",
+    "@timberjs/pines": "workspace:*"
+  }
+}

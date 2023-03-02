@@ -1,7 +1,8 @@
 import { Appearance } from '@timberjs/timber'
-import Color from './color'
+import Color, { Blue } from './color'
 
 export default class Background extends Appearance {
+  static blue = Background.withColor(new Blue())
   static withColor(color: Color) {
     return new Background('background', color.toString())
   }

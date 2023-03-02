@@ -10,6 +10,14 @@ importers:
       prettier: 2.8.4
       turbo: 1.8.3
 
+  examples/todo:
+    specifiers:
+      '@timberjs/pines': workspace:*
+      '@timberjs/timber': workspace:*
+    dependencies:
+      '@timberjs/pines': link:../../packages/pines
+      '@timberjs/timber': link:../../packages/core
+
   packages/core:
     specifiers:
       '@swc/cli': ^0.1.62

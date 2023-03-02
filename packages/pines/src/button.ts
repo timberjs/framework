@@ -1,5 +1,9 @@
-import { appearance, Appearance } from '@timberjs/timber'
-import { smallButtonPadding } from './spacing'
+import { Appearance } from '@timberjs/timber'
+import Background from './background'
+import Border from './border'
+import Color, { Blue } from './color'
+import Foreground from './foreground'
+import { Padding } from './spacing'
 import Surface from './surface'
 import Text from './text'
 
@@ -14,18 +18,7 @@ export default class Button extends Surface {
     super('button')
     this.add(this.label)
     ;(this.element as HTMLButtonElement).type = 'button'
-    this.appearance.use(
-      new Appearance().use(
-        Appearance.withPropertyAndValue('background', '#00aa00'),
-        Appearance.withPropertyAndValue(
-          'box-shadow',
-          '2px 2px 2px 1px rgba(0, 0, 0, 0.08)'
-        ),
-        Appearance.withPropertyAndValue('border-radius', '8px'),
-        appearance`border: 1px solid transparent;`,
-        smallButtonPadding
-      )
-    )
+    this.appearance.use(buttonAppearance)
   }
 
   setLabel(label: string) {
@@ -33,3 +26,10 @@ export default class Button extends Surface {
     return this
   }
 }
+
+const buttonAppearance = new Appearance().use(
+  Foreground.white,
+  Background.withColor(new Blue()),
+  Padding.horizontal(8, 4),
+  Border.transparent
+)
