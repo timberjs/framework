@@ -1,4 +1,4 @@
-import { appearance } from '@timber/pines'
+import { appearance } from '@timberjs/pines'
 import { bootstrap, Frame } from '@timberjs/timber'
 import App from './nodes/app'
 

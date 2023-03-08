@@ -6,7 +6,8 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@timberjs/pines": "workspace:*",
     "@timberjs/timber": "workspace:*",
-    "@timberjs/pines": "workspace:*"
+    "vite": "^4.1.4"
   }
 }

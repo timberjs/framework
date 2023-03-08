@@ -6,6 +6,10 @@ export default class Appearance {
   private components: Array<Appearance> = []
   private content?: string
 
+  static variable(name: string, value: string) {
+    return new Appearance(`--timber-${name}`, value)
+  }
+
   static withPropertyAndValue(property: string, value: string) {
     return new Appearance(property, value)
   }
@@ -40,6 +44,8 @@ export default class Appearance {
 
     if (!content) return
 
+    console.log(content)
+
     crypto.subtle
       .digest('SHA-1', new TextEncoder().encode(content))
       .then((buffer) =>
@@ -47,7 +53,7 @@ export default class Appearance {
           .map((value) => value.toString(16).padStart(2, '0'))
           .join('')
       )
-      .then((hash) => `a-${this.id}-${hash}`)
+      .then((hash) => `b-${this.id}-${hash}`)
       .then((className) =>
         this.styleSheet
           .replace(`.${className}{${content}}`)

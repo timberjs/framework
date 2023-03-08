@@ -1,11 +1,13 @@
 import { Appearance } from '@timberjs/timber'
 import Background from './background'
 import Border from './border'
-import Color, { Blue } from './color'
 import Foreground from './foreground'
+import Palette from './palette'
+import Rounded from './rounded'
 import { Padding } from './spacing'
 import Surface from './surface'
 import Text from './text'
+import { useVariable } from './variable'
 
 export default class Button extends Surface {
   private label = new Text()
@@ -29,7 +31,9 @@ export default class Button extends Surface {
 
 const buttonAppearance = new Appearance().use(
   Foreground.white,
-  Background.withColor(new Blue()),
+  Background.withColor(Palette.sky.variant(400)),
   Padding.horizontal(8, 4),
-  Border.transparent
+  Border.transparent,
+  Rounded.large,
+  new Appearance('font-size', useVariable('font-size-md'))
 )

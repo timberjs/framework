@@ -1,7 +1,7 @@
 import { Appearance } from '@timberjs/timber'
 
 export default class FontFamily extends Appearance {
-  static fonts = [
+  static systemFonts = [
     'system-ui',
     '-apple-system',
     'BlinkMacSystemFont',
@@ -14,9 +14,12 @@ export default class FontFamily extends Appearance {
     'sans-serif',
   ]
 
-  static system = new FontFamily(this.fonts.join(','))
+  static inter = new FontFamily('"Inter var", sans-serif')
 
-  constructor(fontFamily: string) {
-    super('font-family', fontFamily)
+  static system = new FontFamily(this.systemFonts.join(','))
+
+  constructor(fontFamily: string, variableFontFamily?: string) {
+    super()
+    this.use(new Appearance('font-family', fontFamily))
   }
 }

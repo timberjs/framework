@@ -1,4 +1,4 @@
-import { Button, Text } from '@timber/pines'
+import { Button, Text } from '@timberjs/pines'
 import { Component, Signal } from '@timberjs/timber'
 
 export default class App extends Component {

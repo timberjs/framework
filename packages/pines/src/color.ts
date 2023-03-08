@@ -3,6 +3,11 @@ import { debug } from '@timberjs/timber'
 export default class Color {
   static black = new Color(0, 0, 0)
 
+  static fromHexCode(hex: string) {
+    const [r, g, b, a] = colorFromHex(hex)
+    return new Color(r, g, b, a)
+  }
+
   constructor(
     private red: number,
     private green: number,
