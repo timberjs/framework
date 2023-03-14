@@ -1,0 +1,13 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "Timber",
+  "includeVersion": true,
+  "cname": "docs.timberjs.com",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/core",
+    "packages/appearance",
+    "packages/user-interface"
+  ],
+  "out": "docs"
+}

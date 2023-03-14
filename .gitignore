@@ -1,5 +1,10 @@
 .turbo/
 node_modules/
+
 dist/
+docs/
 
 *.tsbuildinfo
+/test-results/
+/playwright-report/
+/playwright/.cache/
